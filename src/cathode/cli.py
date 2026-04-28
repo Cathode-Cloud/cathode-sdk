@@ -5,7 +5,9 @@ import click
 
 @click.group()
 @click.version_option(package_name="cathode")
-@click.option("--api-key", envvar="CATHODE_API_KEY", default=None, help="Cathode API key.")
+@click.option(
+    "--api-key", envvar="CATHODE_API_KEY", default=None, help="API key."
+)
 @click.pass_context
 def main(ctx: click.Context, api_key: str | None) -> None:
     """Cathode Cloud CLI."""
